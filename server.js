@@ -19,6 +19,7 @@ const port = process.env.PORT || 3000;
 const router = express.Router(); // intercepta todas as rotas
 const productRoute = require('./routes/product-route');
 const indexRoute = require('./routes/index-route');
+const categoryRoute = require('./routes/category-route');
 
 
 
@@ -30,6 +31,8 @@ app.use('/api', indexRoute);
 
 // Rota para produto
 app.use('/api/produtos/', productRoute);
+app.use('/api/categorias/', categoryRoute);
+
 
 app.listen(port, () => {
     console.log('Server is up and running... on port', port);
